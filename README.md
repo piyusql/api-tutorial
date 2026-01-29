@@ -431,7 +431,7 @@ You don't need to know HOW the kitchen makes pizza. You just need to know:
 Open your terminal and type this:
 
 ```bash
-curl https://api.github.com/users/octocat
+curl https://api.github.com/users/piyusql
 ```
 
 You just made an API call! You should see JSON data about GitHub's mascot.
@@ -443,7 +443,7 @@ Now let's do it in Python:
 import requests
 
 # Make a GET request to GitHub's API
-response = requests.get('https://api.github.com/users/octocat')
+response = requests.get('https://api.github.com/users/piyusql')
 
 # Print the status code (200 = success!)
 print(f"Status Code: {response.status_code}")
@@ -455,7 +455,7 @@ print(f"Name: {data['name']}")
 print(f"Followers: {data['followers']}")
 ```
 
-**Try It Yourself:** Run this code! Change `octocat` to your own GitHub username.
+**Try It Yourself:** Run this code! Change `piyusql` to your own GitHub username.
 
 ### Key Concepts (with Examples)
 
@@ -466,7 +466,7 @@ print(f"Followers: {data['followers']}")
 | **Server**   | The computer responding     | GitHub's computers           |
 | **Request**  | What you ask for            | "Give me user info"          |
 | **Response** | What you get back           | User's name, followers, etc. |
-| **Endpoint** | The URL you call            | `/users/octocat`             |
+| **Endpoint** | The URL you call            | `/users/piyusql`             |
 
 
 ```mermaid
@@ -475,12 +475,12 @@ sequenceDiagram
     participant API as GitHub API
     participant DB as GitHub Database
 
-    You->>API: GET /users/octocat
-    Note right of You: "Hey GitHub, tell me about octocat"
-    API->>DB: Look up user 'octocat'
+    You->>API: GET /users/piyusql
+    Note right of You: "Hey GitHub, tell me about piyusql"
+    API->>DB: Look up user 'piyusql'
     DB-->>API: Here's the user data
     API-->>You: 200 OK + JSON data
-    Note left of API: "Here's everything about octocat!"
+    Note left of API: "Here's everything about piyusql!"
 ```
 
 ### Types of APIs (Focus on Web APIs)
@@ -502,7 +502,7 @@ sequenceDiagram
 import requests
 
 # This is calling a WEB API
-response = requests.get('https://api.github.com/users/octocat')
+response = requests.get('https://api.github.com/users/piyusql')
 
 # The library (requests) helps you call the web API (GitHub)
 ```
@@ -529,7 +529,7 @@ print(f"\nPost Title: {post['title']}")
 
 ### Remember: The 4 Things Every API Call Has
 
-1. **URL** - Where to send the request (`https://api.github.com/users/octocat`)
+1. **URL** - Where to send the request (`https://api.github.com/users/piyusql`)
 2. **Method** - What action to take (GET, POST, etc.)
 3. **Headers** - Extra info (authentication, content type)
 4. **Body** - Data you're sending (for POST/PUT requests)
@@ -592,7 +592,7 @@ DELETE https://api.example.com/users/123
 import requests
 
 # Get a user
-user = requests.get('https://api.github.com/users/octocat').json()
+user = requests.get('https://api.github.com/users/piyusql').json()
 
 # Create something
 new_post = requests.post('https://api.example.com/posts', json={
@@ -674,7 +674,7 @@ import requests
 
 query = """
 query {
-  user(login: "octocat") {
+  user(login: "piyusql") {
     name
     repositories(first: 5) {
       nodes {
@@ -913,7 +913,7 @@ Status codes are **3-digit numbers** that tell you what happened. You only need 
 ```python
 import requests
 
-response = requests.get('https://api.github.com/users/octocat')
+response = requests.get('https://api.github.com/users/piyusql')
 
 # Check what happened
 if response.status_code == 200:
@@ -1607,7 +1607,7 @@ Cache-Control: no-cache
 
 ```bash
 # See HTTP version in curl
-curl -v --http2 https://api.github.com/users/octocat
+curl -v --http2 https://api.github.com/users/piyusql
 ```
 
 ---
@@ -1620,13 +1620,13 @@ curl -v --http2 https://api.github.com/users/octocat
 
 ```bash
 # Basic GET request
-curl https://api.github.com/users/octocat
+curl https://api.github.com/users/piyusql
 
 # Verbose mode - see everything
-curl -v https://api.github.com/users/octocat
+curl -v https://api.github.com/users/piyusql
 
 # See only headers
-curl -I https://api.github.com/users/octocat
+curl -I https://api.github.com/users/piyusql
 
 # Follow redirects
 curl -L https://example.com/api
@@ -1697,7 +1697,7 @@ from urllib3.util.retry import Retry
 # ============================================
 
 # Simple GET
-response = requests.get('https://api.github.com/users/octocat')
+response = requests.get('https://api.github.com/users/piyusql')
 print(response.status_code)  # 200
 print(response.headers['content-type'])  # application/json
 data = response.json()  # Parse JSON response
@@ -6191,7 +6191,7 @@ def get_github_profile(username):
     return user
 
 # Try it!
-get_github_profile('octocat')
+get_github_profile('piyusql')
 get_github_profile('your-username-here')
 ```
 
